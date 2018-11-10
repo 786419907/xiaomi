@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米商城 - 红米Note 4X、小米5C、小米MIX、小米笔记本官方网站</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<style>
+    .demo{
+        margin: 300px auto;
+        width: 400px;
+    }
+    progress{
+        height:30px;
+        margin:  0 auto;
+    }
+
+
+
+
+
+</style>
+<body>
+    <div class="demo">
+    <progress max="100" id="pro"></progress><span>0%</span>
+    <input type="button" id="btn" value="EXECUTE">
+    <meter min="0" max="100" value="10"></meter>
+        <!--ie不支持meter-->
+    </div>
+</body>
+<script type="text/javascript">
+    $(function () {
+    $('#btn').bind('click',function () {
+        setInterval(Thread_1, 10);
+    });
+        var count = 0;
+        function Thread_1() {
+            if (count < 100) {
+                count++;
+                updateProgress(count);
+            }
+        }
+        function updateProgress(newValue) {
+        $('#pro').val(newValue);
+        $('span').text(newValue + '%');
+    }
+
+
+
+    });
+</script>
+</html>
